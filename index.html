@@ -22,24 +22,13 @@
             dark: '#0f172a',
           },
           animation: {
-            'fade-in-up': 'fadeInUp 0.8s ease-out both',
-            'fade-in-right': 'fadeInRight 0.8s ease-out both',
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'spin-glow': 'spin 6s linear infinite',
           },
           keyframes: {
             spinGlow: {
               '0%': { transform: 'rotate(0deg)' },
               '100%': { transform: 'rotate(360deg)' }
-            },
-            fadeInUp: {
-              '0%': { opacity: 0, transform: 'translateY(20px)' },
-              '100%': { opacity: 1, transform: 'translateY(0)' },
-            },
-            fadeInRight: {
-              '0%': { opacity: 0, transform: 'translateX(20px)' },
-              '100%': { opacity: 1, transform: 'translateX(0)' },
-            },
+            }
           }
         }
       }
@@ -123,7 +112,7 @@
       <div class="container p-5">
         <div class="flex flex-col lg:flex-row items-center justify-between">
 
-          <div class="w-full lg:mr-10 text-left animate-fade-in-up">
+          <div class="w-full lg:mr-10 text-left">
             <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold mb-3">
               Hi, My nickname's <span class="bg-gradient-to-r from-primary to-secondary gradient-text">Mikey</span>
             </h1>
@@ -167,7 +156,7 @@
             </div>
           </div>
 
-          <div class="hidden lg:flex ml-10 justify-end animate-fade-in-right">
+          <div class="hidden lg:flex ml-10 justify-end">
             <div class="relative lg:w-[35rem] lg:h-[35rem]">
               <div
                 class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full animate-spin-glow opacity-70 blur-md">
