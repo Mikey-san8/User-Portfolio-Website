@@ -110,7 +110,7 @@
   <main>
     <section id="about" class="px-6 overflow-hidden border-b border-foreground dark:border-darkForeground">
       <div class="container mx-auto flex items-center justify-between gap-5">
-        <div class="flex flex-col justify-center py-6">
+        <div class="flex flex-col justify-center py-6 w-full">
           <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold mb-3">
             Hi, My nickname's Mikey
           </h1>
@@ -122,7 +122,7 @@
             <div id="answerBox" class="min-h-32 mb-5">
               <p id="answerText" class="text-lg">Select a question below to learn more about me.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <button onclick="showAnswer(0)"
                 class="border border-dashed border-foreground dark:border-darkForeground shadow-lg text-sm rounded-md py-3 px-2">
                 🧑‍💼 Tell me about yourself
@@ -154,8 +154,8 @@
           </div>
         </div>
 
-        <div class="hidden lg:flex flex-col justify-end pt-20">
-          <img src="assets/images/Image-me.png" alt="Me" class="w-[45rem] h-auto object-contain mx-auto" />
+        <div class="hidden lg:flex justify-end mt-20 w-full">
+          <img src="assets/images/Image-me.png" alt="Me" class="w-[45rem] h-auto object-contain" />
         </div>
 
       </div>
