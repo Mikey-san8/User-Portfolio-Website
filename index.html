@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Portfolio of Michael Joe Saludares, Computer Science graduate and software developer">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+
+  <!-- Bring this font style back if needed -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" /> -->
+
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -28,33 +30,39 @@
             darkBackground: '#121212',
             darkForeground: '#e5e5e5',
           },
+          backgroundImage: {
+            'animated-gradient': 'linear-gradient(90deg, #e5e5e5, #1a1a1a, #e5e5e5)',
+          },
+          backgroundSize: {
+            'size-200': '200% 100%',
+          },
           animation: {
-            'spin-glow': 'spin 6s linear infinite',
+            'marquee-gradient': 'marqueeGradient 4s linear infinite',
           },
           keyframes: {
-            spinGlow: {
-              '0%': { transform: 'rotate(0deg)' },
-              '100%': { transform: 'rotate(360deg)' }
-            }
+            marqueeGradient: {
+              '0%': { backgroundPosition: '200% 0%' },
+              '100%': { backgroundPosition: '0% 0%' },
+            },
           }
         }
       }
     }
   </script>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 </head>
 
-<body class="font-Poppins text-foreground dark:text-darkForeground">
-
-  <header class="sticky top-0 bg-background/50 dark:bg-darkBackground/50 backdrop-blur shadow-lg z-50">
+<body class="font-mono text-foreground dark:text-darkForeground">
+  <header class="sticky top-0 backdrop-blur shadow-lg z-50">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold">MJS</a>
+      <a href="#"
+        class="text-xl font-bold bg-animated-gradient bg-clip-text text-transparent bg-size-200 animate-marquee-gradient">MJS</a>
 
       <nav class="hidden md:flex items-center space-x-8">
+        <a href="#/" class="hover:text-secondary transition-colors">Home</a>
         <a href="#about" class="hover:text-secondary transition-colors">About</a>
         <a href="#path" class="hover:text-secondary transition-colors">Path</a>
-        <a href="#projects" class="hover:text-secondary transition-colors">Projects</a>
         <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
       </nav>
 
@@ -67,8 +75,7 @@
           </svg>
         </button>
 
-        <a href="https://github.com/Mikey-san8" target="_blank"
-          class="flex items-center gap-2">
+        <a href="https://github.com/Mikey-san8" target="_blank" class="flex items-center gap-2">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M12 .5C5.65.5.5 5.64.5 12c0 5.08 3.29 9.4 7.84 10.94.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.71.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.3-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.15 1.18a10.97 10.97 0 015.73 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.74.11 3.03.74.81 1.18 1.85 1.18 3.11 0 4.43-2.7 5.4-5.27 5.69.41.36.77 1.07.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.79.56A10.5 10.5 0 0023.5 12C23.5 5.64 18.35.5 12 .5z">
@@ -86,41 +93,117 @@
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-200/50 dark:border-gray-800/50">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200/50 dark:border-gray-800/50">
       <div class="container mx-auto px-6 py-3 flex flex-col space-y-4">
-        <a href="#about" class="hover:text-primary transition-colors">About</a>
-        <a href="#path" class="hover:text-primary transition-colors">Path</a>
-        <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
-        <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
-        <div class="pt-2">
-          <a href="https://github.com/Maiku8" target="_blank"
-            class="inline-flex items-center space-x-2 bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 .5C5.65.5.5 5.64.5 12c0 5.08 3.29 9.4 7.84 10.94.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.71.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.3-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.15 1.18a10.97 10.97 0 015.73 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.74.11 3.03.74.81 1.18 1.85 1.18 3.11 0 4.43-2.7 5.4-5.27 5.69.41.36.77 1.07.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.79.56A10.5 10.5 0 0023.5 12C23.5 5.64 18.35.5 12 .5z">
-              </path>
-            </svg>
-            <span>GitHub</span>
-          </a>
-        </div>
+        <a href="#/" class="hover:text-secondary transition-colors">Home</a>
+        <a href="#about" class="hover:text-secondary transition-colors">About</a>
+        <a href="#path" class="hover:text-secondary transition-colors">Path</a>
+        <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+        <a href="https://github.com/Mikey-san8" target="_blank" class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 .5C5.65.5.5 5.64.5 12c0 5.08 3.29 9.4 7.84 10.94.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.71.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.3-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.15 1.18a10.97 10.97 0 015.73 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.74.11 3.03.74.81 1.18 1.85 1.18 3.11 0 4.43-2.7 5.4-5.27 5.69.41.36.77 1.07.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.79.56A10.5 10.5 0 0023.5 12C23.5 5.64 18.35.5 12 .5z">
+            </path>
+          </svg>
+          <span>GitHub</span>
+        </a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="about" class="px-6 overflow-hidden border-b border-foreground dark:border-darkForeground">
+    <section id="/" class="px-6 border-foreground dark:border-darkForeground scroll-mt-12">
+      <div class="container mx-auto lg:min-h-screen flex justify-center items-center py-6">
+        <div class="flex flex-col lg:flex-row w-full gap-8">
+          <div class="w-full flex flex-col text-xs lg:text-lg xl:text-xl">
+            <code>
+              <span class="text-green-500">public class</span> <span class="text-blue-500">MichaelJoeSaludares</span> <span class="text-green-500">{</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;<span class="text-green-500">int</span> <span class="text-blue-500">age</span> <span class="text-pink-500">=</span> <span class="text-orange-400">doesn't matter ;)</span><span class="text-pink-500">;</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;<span class="text-green-500">String</span> <span class="text-blue-500">interests</span> <span class="text-pink-500">=</span> <span class="text-orange-400">"coding, design, tech"</span><span class="text-pink-500">;</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;<span class="text-green-500">String</span> <span class="text-blue-500">aboutMe</span> <span class="text-pink-500">=</span> <span class="text-orange-400">"Software Developer"</span><span class="text-pink-500">;</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;<span class="text-green-500">String</span> <span class="text-blue-500">goal</span>[] <span class="text-pink-500">=</span> <span class="text-orange-400">{"Keep learning", "Keep building"}</span><span class="text-pink-500">;</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;<span class="text-green-500">void</span> <span class="text-blue-500">introduce()</span> <span class="text-green-500">{</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">System.out.println</span><span class="text-pink-500">(</span><span class="text-orange-400">"I'm a "</span> <span class="text-pink-500">+</span> aboutMe <span class="text-pink-500">);</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">System.out.println</span><span class="text-pink-500">(</span><span class="text-orange-400">"Interests: "</span> <span class="text-pink-500">+</span> interests <span class="text-pink-500">);</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">System.out.println</span><span class="text-pink-500">(</span><span class="text-orange-400">"Goals: "</span> <span class="text-pink-500">+</span> goal[0] <span class="text-pink-500">+</span> <span class="text-orange-400">" & "</span> <span class="text-pink-500">+</span> goal[1] <span class="text-pink-500">);</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;<span class="text-green-500">}</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;<span class="text-green-500">public static void</span> <span class="text-blue-500">main</span><span class="text-pink-500">(</span><span class="text-green-500">String</span>[] args<span class="text-pink-500">)</span> <span class="text-green-500">{</span>
+            </code>
+            <code>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-500">MichaelJoeSaludares</span> <span class="text-blue-500">mjs</span> <span class="text-pink-500">=</span> <span class="text-green-500">new</span> <span class="text-blue-500">MichaelJoeSaludares()</span><span class="text-pink-500">;</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;&nbsp;&nbsp;mjs.introduce()<span class="text-pink-500">;</span>
+            </code>
+
+            <code>
+              &nbsp;&nbsp;<span class="text-green-500">}</span>
+            </code>
+
+            <code>
+              <span class="text-green-500">}</span>
+            </code>
+          </div>
+
+          <div class="flex flex-col w-full text-sm lg:text-2xl gap-2">
+            <p class="text-secondary mb-2">Output:</p>
+            <p>I'm a Software Developer</p>
+            <p>Interests: coding, design, tech</p>
+            <p>Goals: Keep learning & building</p>
+            <div class="flex flex-grow justify-end items-end">
+              <a href="#about"
+                class="inline-block bg-green-600 hover:bg-green-700 text-darkForeground text-xs lg:text-lg sm:text-sm font-bold px-4 py-2 rounded shadow transition-all duration-300">
+                ▶ Introduce
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="about" class="px-6 header border-b border-foreground dark:border-darkForeground scroll-mt-16">
       <div class="container mx-auto flex items-center justify-between gap-5">
         <div class="flex flex-col justify-center py-6 w-full">
-          <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold mb-3">
-            Hi, My nickname's Mikey
+          <h1 class="text-3xl lg:text-4xl xl:text-5xl font-bold mb-3">
+            My nickname's Mikey
           </h1>
           <h2 class="text-xl md:text-2xl font-semibold mb-5">
             Software Developer
           </h2>
 
           <div class="overflow-hidden mb-5">
-            <div id="answerBox" class="min-h-32 mb-5">
-              <p id="answerText" class="text-lg">Select a question below to learn more about me.</p>
+            <div id="answerBox" class="mb-5">
+              <p id="answerText" class="md:text-lg">Select a question below to learn more about me.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <button onclick="showAnswer(0)"
@@ -154,7 +237,7 @@
           </div>
         </div>
 
-        <div class="hidden lg:flex justify-end mt-20 w-full">
+        <div class="hidden lg:flex justify-end w-full">
           <img src="assets/images/Image-me.png" alt="Me" class="w-[45rem] h-auto object-contain" />
         </div>
 
@@ -167,7 +250,7 @@
       </div>
     </section>
 
-    <section id="path" class="pt-20 pb-10">
+    <section id="path" class="pt-20 pb-10 scroll-mt-12">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-4">My Learning Path</h2>
         <p class="text-center max-w-2xl mx-auto mb-12">
@@ -177,7 +260,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative">
 
           <div
-            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-lg">
+            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-[0_-4px_10px_0_rgba(156,163,175,0.4)] dark:shadow-[0_-4px_10px_0_rgba(107,114,128,0.4)]">
             <span class="text-end text-sm mb-2">2014-2015</span>
             <h3 class="font-bold text-sm">Started Exploring</h3>
             <p class="text-sm">Looked into software development as a career path.</p>
@@ -189,7 +272,7 @@
           </div>
 
           <div
-            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-lg">
+            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-[0_-4px_10px_0_rgba(156,163,175,0.4)] dark:shadow-[0_-4px_10px_0_rgba(107,114,128,0.4)]">
             <span class="text-end text-sm mb-2">2015-2017</span>
             <h3 class="font-bold text-sm">Far Eastern Universitty</h3>
             <p class="text-sm">Initially took Mass Communication, later shifted focus.</p>
@@ -201,7 +284,7 @@
           </div>
 
           <div
-            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-lg">
+            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-[0_-4px_10px_0_rgba(156,163,175,0.4)] dark:shadow-[0_-4px_10px_0_rgba(107,114,128,0.4)]">
             <span class="text-end text-sm mb-2">2018-2023</span>
             <h3 class="font-bold text-sm">Lyceum of the Philippines</h3>
             <p class="text-sm">Studied Computer Science and learned programming
@@ -212,9 +295,8 @@
               </svg>
             </div>
           </div>
-
           <div
-            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-lg">
+            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-[0_-4px_10px_0_rgba(156,163,175,0.4)] dark:shadow-[0_-4px_10px_0_rgba(107,114,128,0.4)]">
             <span class="text-end text-sm mb-2">2022-2023</span>
             <h3 class="font-bold text-sm">Internship</h3>
             <p class="text-sm">Learned hands-on skills and real-world workflow.</p>
@@ -226,7 +308,7 @@
           </div>
 
           <div
-            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-lg">
+            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-[0_-4px_10px_0_rgba(156,163,175,0.4)] dark:shadow-[0_-4px_10px_0_rgba(107,114,128,0.4)]">
             <span class="text-end text-sm mb-2">2023-2024</span>
             <h3 class="font-bold text-sm">New Languages</h3>
             <p class="text-sm">Explored C#, Java, Web Dev, and frameworks.</p>
@@ -238,7 +320,7 @@
           </div>
 
           <div
-            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-lg">
+            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-[0_-4px_10px_0_rgba(156,163,175,0.4)] dark:shadow-[0_-4px_10px_0_rgba(107,114,128,0.4)]">
             <span class="text-end text-sm mb-2">2024-2025</span>
             <h3 class="font-bold text-sm">First Job</h3>
             <p class="text-sm">IT Programmer at Lawson Philippines.</p>
@@ -250,7 +332,7 @@
           </div>
 
           <div
-            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-lg">
+            class="relative flex flex-col p-6 rounded-xl border-t-2 border-foreground dark:border-darkForeground shadow-[0_-4px_10px_0_rgba(156,163,175,0.4)] dark:shadow-[0_-4px_10px_0_rgba(107,114,128,0.4)]">
             <span class="text-end text-sm mb-2">Present</span>
             <h3 class="font-bold text-sm">Still learning</h3>
             <p class="text-sm">Continuously seeking ways to grow and improve.</p>
@@ -262,7 +344,7 @@
 
     </section>
 
-    <section id="projects" class="pt-20 pb-10">
+    <section class="pt-20 pb-10 scroll-mt-12">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-4">My Projects</h2>
         <p class="text-center max-w-2xl mx-auto mb-12">
@@ -353,7 +435,7 @@
       </div>
     </section>
 
-    <section id="contact" class="container mx-auto my-6 px-6 pt-20 pb-10">
+    <section id="contact" class="container mx-auto px-6 pt-20 pb-10 scroll-mt-12">
       <h2 class="text-3xl font-bold text-center mb-4">Get In Touch</h2>
       <p class="text-center max-w-2xl mx-auto mb-12">
         Have a project in mind or want to connect? Feel free to reach out!
@@ -409,7 +491,7 @@
               <div class="flex space-x-4">
 
                 <a href="https://facebook.com/joe.saludares" target="_blank"
-                  class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                  class="w-10 h-10 rounded-full bg-background dark:bg-primary border-t-2 border-foreground dark:border-darkForeground shadow-lg flex items-center justify-center">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path
                       d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.5l-.4 3h-2.1v7A10 10 0 0 0 22 12z">
@@ -418,7 +500,7 @@
                 </a>
 
                 <a href="https://instagram.com/avrgjs" target="_blank"
-                  class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                  class="w-10 h-10 rounded-full bg-background dark:bg-primary border-t-2 border-foreground dark:border-darkForeground shadow-lg flex items-center justify-center">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path
                       d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.3.4.5.2.9.5 1.2 1 .3.5.5 1.1.6 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.3-.2.5-.5.9-1 1.2-.5.3-1.1.5-2.3.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.3-.4-.5-.2-.9-.5-1.2-1-.3-.5-.5-1.1-.6-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.9.4-2.3.2-.5.5-.9 1-1.2.5-.3 1.1-.5 2.3-.6C8.4 2.2 8.8 2.2 12 2.2zm0 1.8a8 8 0 100 16 8 8 0 000-16zm4.8 1.5a1.3 1.3 0 11-2.6 0 1.3 1.3 0 012.6 0zM12 7a5 5 0 110 10 5 5 0 010-10z" />
@@ -426,7 +508,7 @@
                 </a>
 
                 <a href="https://www.linkedin.com/in/michael-joe-saludares-45a3482aa" target="_blank"
-                  class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                  class="w-10 h-10 rounded-full bg-background dark:bg-primary border-t-2 border-foreground dark:border-darkForeground shadow-lg flex items-center justify-center">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path
                       d="M19 0h-14a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5v-14a5 5 0 0 0-5-5zM8.3 19.2h-3v-9h3v9zM6.8 8.5a1.74 1.74 0 1 1 0-3.48 1.74 1.74 0 0 1 0 3.48zm12.4 10.7h-3v-4.8c0-1.1 0-2.5-1.6-2.5s-1.8 1.2-1.8 2.4v4.9h-3v-9h2.9v1.2h.1a3.2 3.2 0 0 1 2.8-1.5c3 0 3.5 2 3.5 4.6v4.7z" />
@@ -497,6 +579,8 @@
     class="fixed top-0 left-0 w-full min-h-full object-cover z-[-1] filter invert dark:filter-none">
     <source src="assets/video/bg-dark-video.mp4" type="video/mp4" />
   </video>
+
+  </div>
 
 </body>
 
