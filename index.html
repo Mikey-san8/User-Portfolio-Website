@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-gray-800">
+<html lang="en" class="h-full overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-gray-800">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,6 +11,8 @@
   <!-- Bring this font style back if needed -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" /> -->
 
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -19,7 +21,7 @@
       theme: {
         extend: {
           fontFamily: {
-            Poppins: ['Poppins', 'sans-serif'],
+            orbitron: ['Orbitron', 'sans-serif'],
           },
           colors: {
             primary: '#000000',
@@ -53,12 +55,16 @@
 
 </head>
 
-<body class="font-mono text-foreground dark:text-darkForeground">
-  <header class="sticky top-0 backdrop-blur shadow-lg z-50">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="#"
-        class="text-xl font-bold bg-animated-gradient bg-clip-text text-transparent bg-size-200 animate-marquee-gradient">MJS</a>
+<!-- dark -->
+<iframe src="https://www.shadertoy.com/embed/NtsBzB?gui=false&t=10&paused=false&muted=true"
+  class="hidden dark:block fixed top-0 left-0 w-full h-full z-[-10] pointer-events-none opacity-80">
+</iframe>
+<!-- light -->
 
+<body class="font-orbitron text-foreground dark:text-darkForeground bg-background dark:bg-transparent">
+  <header class="sticky top-0 z-10">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold">MJS</a>
       <nav class="hidden md:flex items-center space-x-8">
         <a href="#/" class="hover:text-secondary transition-colors">Home</a>
         <a href="#about" class="hover:text-secondary transition-colors">About</a>
@@ -93,26 +99,18 @@
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200/50 dark:border-gray-800/50">
-      <div class="container mx-auto px-6 py-3 flex flex-col space-y-4">
+    <div id="mobile-menu" class="container mx-auto hidden md:hidden flex justify-end">
+      <div class="px-6 py-3 flex flex-col space-y-4 w-fit">
         <a href="#/" class="hover:text-secondary transition-colors">Home</a>
         <a href="#about" class="hover:text-secondary transition-colors">About</a>
         <a href="#path" class="hover:text-secondary transition-colors">Path</a>
         <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
-        <a href="https://github.com/Mikey-san8" target="_blank" class="flex items-center gap-2">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M12 .5C5.65.5.5 5.64.5 12c0 5.08 3.29 9.4 7.84 10.94.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.19.69-3.86-1.54-3.86-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.71.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.3-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.15 1.18a10.97 10.97 0 015.73 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.74.11 3.03.74.81 1.18 1.85 1.18 3.11 0 4.43-2.7 5.4-5.27 5.69.41.36.77 1.07.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.79.56A10.5 10.5 0 0023.5 12C23.5 5.64 18.35.5 12 .5z">
-            </path>
-          </svg>
-          <span>GitHub</span>
-        </a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="/" class="px-6 border-foreground dark:border-darkForeground scroll-mt-12 mb-4">
+    <section id="/" class="px-6 border-foreground dark:border-darkForeground scroll-mt-12 mb-12">
       <div class="container mx-auto lg:min-h-screen flex justify-center items-center py-6">
         <div class="flex flex-col lg:flex-row w-full gap-4">
           <div class="w-full flex flex-col text-xs lg:text-lg xl:text-xl">
@@ -176,12 +174,12 @@
             </code>
           </div>
 
-          <div class="flex flex-col w-full text-sm lg:text-2xl gap-1">
-            <p class="text-secondary mb-2">Output:</p>
+          <div class="flex flex-col w-full text-sm lg:text-xl">
+            <p class="lg:text-3xl text-secondary mb-2">Output:</p>
             <p>I'm a Software Developer</p>
             <p>Interests: coding, design, tech</p>
             <p>Goals: Keep learning & building</p>
-            <div class="flex flex-grow justify-end items-end mt-2">
+            <div class="flex flex-grow justify-end mt-6">
               <a href="#about"
                 class="inline-block bg-green-600 hover:bg-green-700 text-darkForeground text-xs lg:text-lg sm:text-sm font-bold px-4 py-2 rounded shadow transition-all duration-300">
                 ▶ Introduce
@@ -226,9 +224,9 @@
           </div>
 
           <div class="flex flex-row gap-2">
-            <a href="#contact"
+            <a href="assets/documents/MJSaludares-Resume.pdf" target="_blank" rel="noopener"
               class="dark:bg-primary px-6 py-3 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm">
-              Download Resume
+              View Resume
             </a>
             <a href="#projects"
               class="px-6 py-3 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm">
@@ -344,7 +342,7 @@
 
     </section>
 
-    <section class="pt-20 pb-10 scroll-mt-12">
+    <section id="projects" class="pt-20 pb-10 scroll-mt-12">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-4">My Projects</h2>
         <p class="text-center max-w-2xl mx-auto mb-12">
@@ -532,55 +530,37 @@
 
   </main>
 
-  <footer class="sticky bottom-0 bg-background/50 dark:bg-darkBackground/50 backdrop-blur shadow-lg z-50">
-    <div class="container flex items-center justify-between p-6 mx-auto">
-      <label class="text-xl font-bold">Skills</label>
-      <div class="flex flex-grow justify-between lg:justify-end gap-4 ml-10">
+  <footer class="sticky bottom-0 shadow-lg z-10">
+    <div class="container mx-auto px-6 py-3 flex flex-grow justify-between lg:justify-end gap-4">
+      <div class="flex items-center gap-2" title="HTML">
+        <img src="https://static.cdnlogo.com/logos/h/84/html.svg" class="w-6 h-6">
+      </div>
 
-        <div class="flex items-center gap-2" title="HTML">
-          <img src="https://static.cdnlogo.com/logos/h/84/html.svg" class="w-6 h-6">
-          <span class="hidden md:flex text-sm">HTML</span>
-        </div>
+      <div class="flex items-center gap-2" title="CSS">
+        <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" class="w-6 h-6">
+      </div>
 
-        <div class="flex items-center gap-2" title="CSS">
-          <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" class="w-6 h-6">
-          <span class="hidden md:flex text-sm">CSS</span>
-        </div>
+      <div class="flex items-center gap-2" title="JavaScript">
+        <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" class="w-6 h-6">
+      </div>
 
-        <div class="flex items-center gap-2" title="JavaScript">
-          <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" class="w-6 h-6">
-          <span class="hidden md:flex text-sm">JavaScript</span>
-        </div>
+      <div class="flex items-center gap-2" title="Java">
+        <img src="https://cdn.worldvectorlogo.com/logos/java-4.svg" class="w-6 h-6">
+      </div>
 
-        <div class="flex items-center gap-2" title="Java">
-          <img src="https://cdn.worldvectorlogo.com/logos/java-4.svg" class="w-6 h-6">
-          <span class="hidden md:flex text-sm">Java</span>
-        </div>
+      <div class="flex items-center gap-2" title="C#">
+        <img src="https://cdn.worldvectorlogo.com/logos/c--4.svg" class="w-6 h-6">
+      </div>
 
-        <div class="flex items-center gap-2" title="C#">
-          <img src="https://cdn.worldvectorlogo.com/logos/c--4.svg" class="w-6 h-6">
-          <span class="hidden md:flex text-sm">C#</span>
-        </div>
+      <div class="flex items-center gap-2" title="ASP.NET">
+        <img src="https://cdn.worldvectorlogo.com/logos/dot-net-core-7.svg" class="w-6 h-6">
+      </div>
 
-        <div class="flex items-center gap-2" title="ASP.NET">
-          <img src="https://cdn.worldvectorlogo.com/logos/dot-net-core-7.svg" class="w-6 h-6">
-          <span class="hidden md:flex text-sm">.NET</span>
-        </div>
-
-        <div class="flex items-center gap-2" title="SQL">
-          <img src="https://www.svgrepo.com/show/331760/sql-database-generic.svg" class="w-6 h-6">
-          <span class="hidden md:flex text-sm">SQL</span>
-        </div>
+      <div class="flex items-center gap-2" title="SQL">
+        <img src="https://www.svgrepo.com/show/331760/sql-database-generic.svg" class="w-6 h-6">
       </div>
     </div>
   </footer>
-
-  <video autoplay loop muted playsinline
-    class="fixed top-0 left-0 w-full min-h-full object-cover z-[-1] filter invert dark:filter-none">
-    <source src="assets/video/bg-dark-video.mp4" type="video/mp4" />
-  </video>
-
-  </div>
 
 </body>
 

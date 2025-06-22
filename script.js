@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    toggleButton();
+  toggleButton();
   toggleMode();
-
+  lightMode();
 });
 
 function showAnswer(index) {
@@ -105,3 +105,4 @@ function toggleButton() {
     });
   });
 }
+
