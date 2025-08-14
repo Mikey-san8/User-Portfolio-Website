@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleButton();
   toggleMode();
   lightMode();
+  scrollCards();
 });
 
 function showAnswer(index) {
@@ -102,6 +103,30 @@ function toggleButton() {
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
+    });
+  });
+}
+
+function scrollCards() {
+  const cards = document.querySelectorAll('[id^="card"]');
+  const container = document.querySelector('.overflow-x-auto');
+
+  container.addEventListener('scroll', () => {
+    const containerRect = container.getBoundingClientRect();
+    const containerCenterX = containerRect.left + containerRect.width / 2;
+
+    cards.forEach(card => {
+      const cardRect = card.getBoundingClientRect();
+      const cardCenterX = cardRect.left + cardRect.width / 2;
+      const distance = Math.abs(containerCenterX - cardCenterX);
+
+      if (distance < 100) {
+        card.classList.add('scale-110', 'z-10');
+        card.classList.remove('scale-100', 'opacity-70');
+      } else {
+        card.classList.remove('scale-110', 'z-10');
+        card.classList.add('scale-100', 'opacity-70');
+      }
     });
   });
 }
